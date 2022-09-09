@@ -14,14 +14,74 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #616161;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #242424;
+}
+
+h2, h3, h4, h5 {
+    margin: 15px;
+}
+
+.UI {
+    width: 900px;
+    max-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
+}
+
+.triggers {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.trigger,
+.trigger-active {
+    padding: 20px 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-transform: lowercase;
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+.trigger-active {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    grid-gap: 50px;
+    box-sizing: border-box;
+    padding: 30px 40px;
+}
+
+.cat {
+    width: 200px;
+    height: auto;
+}
+
+img.cat-image {
+    width: 100%;
+    height: auto;
 }
 
 .App-link {
