@@ -1,25 +1,24 @@
-import { useState } from 'react';
 import Trigger from './Trigger.js';
 
-export default function Triggers( ) {
-
-    const [ state, setState] = useState("none");
+export default function Triggers( { sort, sortBy } ) {
 
     const triggers = [
-        { label: 'none' , arg: 'test', state: state, setState: setState },
-        { label: 'cutest' , arg: 'test', state: state, setState: setState },
-        { label: 'not cute' , arg: 'test', state: state, setState: setState  },
-        { label: 'lives left' , arg: 'test', state: state, setState: setState  },
+        { label: 'none' , arg: 'none', sort: sort, sortBy: sortBy },
+        { label: 'cute' , arg: 'cutest', sort: sort, sortBy: sortBy },
+        { label: 'not cute' , arg: 'uncute', sort: sort, sortBy: sortBy  },
+        { label: 'lives left' , arg: 'lives', sort: sort, sortBy: sortBy  },
+        { label: 'atchooo' , arg: 'allergy', sort: sort, sortBy: sortBy  },
     ];
 
   return (
-    <div className="triggers">
-        {triggers.map(function(trigger){
-            return(
-                <Trigger args={trigger} />
-            )
-        })}
-    </div>
+        <div className="triggers">
+            <b className="sorting">sorting:</b>
+            {triggers.map(function(trigger){
+                return(
+                    <Trigger args={trigger} />
+                )
+            })}
+        </div>
   );
 
 }

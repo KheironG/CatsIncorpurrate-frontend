@@ -2,8 +2,8 @@
 export default function Trigger( { args } ) {
 
   return (
-    <div className={ args.label === args.state ? ('trigger-active') : ('trigger')  }
-        onClick={() => args.setState(args.label)} >
+    <div className={ args.arg === args.sort ? ('trigger-active') : ('trigger')  }
+        onClick={() => args.sortBy(args.arg)} >
         {args.label}
     </div>
   );

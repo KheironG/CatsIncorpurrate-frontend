@@ -24,6 +24,7 @@
   color: #616161;
   padding-left: 20px;
   padding-right: 20px;
+  margin-top: 60px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -34,18 +35,31 @@ h2, h3, h4, h5 {
     margin: 15px;
 }
 
+sup {
+    font-size: calc(10px + 1vmin)
+}
+
+p {
+    margin-top: 0px;
+}
+
 .UI {
     width: 900px;
     max-width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 3px;
+}
+
+.sorting {
+    color: black;
 }
 
 .triggers {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: calc(10px + 1.5vmin)
 }
 
 .trigger,
@@ -56,6 +70,7 @@ h2, h3, h4, h5 {
     text-transform: lowercase;
     text-align: center;
     border-bottom: 2px solid white;
+    user-select: none;
 }
 
 .trigger-active {
@@ -77,6 +92,8 @@ h2, h3, h4, h5 {
 .cat {
     width: 200px;
     height: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
 }
 
 img.cat-image {
