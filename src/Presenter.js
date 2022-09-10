@@ -22,7 +22,7 @@ export default function Presenter( { model } ) {
                 sortCats( model.slice(0).sort((a,b) => a.cutenessLevel - b.cutenessLevel ) );
                 break;
             case 'allergy':
-                sortCats( model.slice(0).filter( item => !toString(item.allergyInducingFur).includes('false') ) );
+                sortCats( model.slice(0).filter( ( {allergyInducingFur} ) => allergyInducingFur !== false ) );
                 break;
             default:
                 sortCats(model);
@@ -31,12 +31,12 @@ export default function Presenter( { model } ) {
     }, [ sort, model ]);
 
     return (
-      <div className="UI">
+      <div className="view">
             <Triggers sort={sort} sortBy={sortBy} />
-            <div className="content">
-                {cats.map(function(cat, i){
+            <div className="cats">
+                {cats.map(function(cat){
                     return(
-                        <Cat cat={cat} />
+                        <Cat key={cat.name} cat={cat} />
                     )
                 })}
             </div>

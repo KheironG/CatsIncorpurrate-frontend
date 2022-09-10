@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -25,6 +14,7 @@
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 60px;
+  margin-bottom: 100px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -43,23 +33,35 @@ p {
     margin-top: 0px;
 }
 
-.UI {
+.view {
     width: 900px;
     max-width: 100%;
 }
 
-.sorting {
-    color: black;
-}
-
-.triggers {
+.trigger-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     margin-top: 60px;
     margin-bottom: 60px;
     font-size: calc(10px + 1.5vmin)
+}
+
+.sorting {
+    color: black;
+    width: 10%;
+    margin-right: 30px;
+}
+
+.triggers {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+
 }
 
 .trigger,
@@ -71,6 +73,7 @@ p {
     text-align: center;
     border-bottom: 2px solid white;
     user-select: none;
+    white-space: nowrap;
 }
 
 .trigger-active {
@@ -78,7 +81,7 @@ p {
     border-bottom: 2px solid black;
 }
 
-.content {
+.cats {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,13 +106,4 @@ img.cat-image {
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
