@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import Triggers from './Triggers.js';
-import Cat from './Cat.js';
+import Triggers from '../triggers/Triggers.js';
+import Cat from '../cat/Cat.js';
+import './Presenter.css';
 
 export default function Presenter( { model } ) {
 

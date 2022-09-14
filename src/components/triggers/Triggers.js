@@ -1,4 +1,5 @@
-import Trigger from './Trigger.js';
+import Trigger from '../trigger/Trigger.js';
+import './Triggers.css';
 
 export default function Triggers( { sort, sortBy } ) {
 

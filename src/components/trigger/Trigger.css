@@ -1,0 +1,16 @@
+.trigger,
+.trigger-active {
+    padding: 20px 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-transform: lowercase;
+    text-align: center;
+    border-bottom: 2px solid white;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.trigger-active {
+    color: black;
+    border-bottom: 2px solid black;
+}

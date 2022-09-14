@@ -1,3 +1,5 @@
+import './Cat.css';
+
 export default function Cat( { cat } ) {
     return (
     <div className="cat">
