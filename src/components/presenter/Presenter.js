@@ -1,42 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
+
 import Triggers from '../triggers/Triggers.js';
 import Cat from '../cat/Cat.js';
+
 import './Presenter.css';
 
 const Presenter = ( { model } ) => {
 
-    const [ sort, sortBy] = useState("none");
-    const [ cats, sortCats ] = useState(model);
+    const [ sortState, setSortState ] = useState("none");
 
-    useEffect(() => {
-        switch ( sort ) {
+    const calculateSortingOrder = ( sortState, model ) => {
+        const copy = model.slice();
+        switch ( sortState ) {
             case 'none':
-                sortCats(model);
+                return copy;
                 break;
             case 'lives':
-                sortCats( model.slice(0).sort((a,b) => a.livesLeft - b.livesLeft) );
+                return copy.sort((a,b) => a.livesLeft - b.livesLeft);
                 break;
             case 'cutest':
-                sortCats( model.slice(0).sort((a,b) => b.cutenessLevel - a.cutenessLevel ) )
+                return copy.sort((a,b) => b.cutenessLevel - a.cutenessLevel );
                 break;
             case 'uncute':
-                sortCats( model.slice(0).sort((a,b) => a.cutenessLevel - b.cutenessLevel ) );
+                return copy.sort((a,b) => a.cutenessLevel - b.cutenessLevel );
                 break;
             case 'allergy':
-                sortCats( model.slice(0).filter( ( {allergyInducingFur} ) => allergyInducingFur !== false ) );
+                return copy.filter( ( {allergyInducingFur} ) => allergyInducingFur !== false );
                 break;
             default:
-                sortCats(model);
+                return copy;
                 break;
         }
-    }, [ sort, model ]);
+    };
+
+    const sortingOrder = useMemo(() => calculateSortingOrder( sortState, model ), [ sortState, model ]);
 
     return (
       <div className="view">
-            <Triggers sort={sort} sortBy={sortBy} />
+            <Triggers sort={sortState} sortBy={setSortState} />
             <div className="cats">
-                {cats.map(function(cat){
+                {sortingOrder.map(function(cat){
                     return(
                         <Cat key={cat.name} cat={cat} />
                     )
@@ -44,6 +48,7 @@ const Presenter = ( { model } ) => {
             </div>
       </div>
     );
+
 
 }
 

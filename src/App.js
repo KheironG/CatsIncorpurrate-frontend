@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import Presenter from './components/presenter/Presenter.js';
 import './App.css';
 
-function App() {
+const App = () => {
 
     const [ model, setModel ] = useState([]);
 
     useEffect(() => {
-        const getCats = async () => {
+        const getModel = async () => {
           try {
             const response = await fetch( "http://localhost:4000/cats", { mode:'cors' } );
             const responseData = await response.json();
@@ -16,7 +16,7 @@ function App() {
             console.error(error);
           }
         };
-        getCats();
+        getModel();
     }, []);
 
   return (
