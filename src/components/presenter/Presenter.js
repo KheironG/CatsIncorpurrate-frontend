@@ -16,16 +16,16 @@ const Presenter = ( { model } ) => {
             case 'none':
                 return copy;
                 break;
-            case 'lives':
+            case 'lives left':
                 return copy.sort((a,b) => a.livesLeft - b.livesLeft);
                 break;
-            case 'cutest':
+            case 'cute':
                 return copy.sort((a,b) => b.cutenessLevel - a.cutenessLevel );
                 break;
-            case 'uncute':
+            case 'not cute':
                 return copy.sort((a,b) => a.cutenessLevel - b.cutenessLevel );
                 break;
-            case 'allergy':
+            case 'atchooo':
                 return copy.filter( ( {allergyInducingFur} ) => allergyInducingFur !== false );
                 break;
             default:
@@ -38,7 +38,7 @@ const Presenter = ( { model } ) => {
 
     return (
       <div className="view">
-            <Triggers sort={sortState} sortBy={setSortState} />
+            <Triggers sortState={sortState} setSortState={setSortState} />
             <div className="cats">
                 {sortingOrder.map(function(cat){
                     return(
@@ -48,7 +48,6 @@ const Presenter = ( { model } ) => {
             </div>
       </div>
     );
-
 
 }
 

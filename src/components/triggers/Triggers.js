@@ -2,25 +2,26 @@ import Trigger from '../trigger/Trigger.js';
 import PropTypes from 'prop-types';
 import './Triggers.css';
 
-const Triggers = ( { sort, sortBy } ) => {
+const Triggers = ( { sortState, setSortState } ) => {
 
     const triggers = [
-        { label: 'none' , arg: 'none'},
-        { label: 'cute' , arg: 'cutest' },
-        { label: 'not cute' , arg: 'uncute' },
-        { label: 'lives left' , arg: 'lives' },
-        { label: 'atchooo' , arg: 'allergy' },
+        { label: 'none' },
+        { label: 'cute' },
+        { label: 'not cute' },
+        { label: 'lives left' },
+        { label: 'atchooo' },
     ];
 
   return (
         <div className="trigger-container">
             <b className="sorting">sorting:</b>
             <div className="triggers">
-            {triggers.map(function(trigger){
-                return(
-                    <Trigger key={trigger.arg} args={trigger} sort={sort} sortBy={sortBy} />
-                )
-            })}
+                {triggers.map( (trigger) => {
+                    const triggerClass = trigger.label === sortState ? ('trigger-active') : ('trigger');
+                    return(
+                        <Trigger key={trigger.label} label={trigger.label} triggerClass={triggerClass} setSortState={setSortState} />
+                    )
+                })}
             </div>
         </div>
   );
@@ -28,8 +29,8 @@ const Triggers = ( { sort, sortBy } ) => {
 }
 
 Triggers.propTypes = {
-    sort: PropTypes.string,
-    sortBy: PropTypes.func
+    sortState: PropTypes.string,
+    setSortState: PropTypes.func
 }
 
 export default Triggers;
