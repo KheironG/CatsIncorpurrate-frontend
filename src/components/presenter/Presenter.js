@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Triggers from '../triggers/Triggers.js';
 import Cat from '../cat/Cat.js';
 import './Presenter.css';
 
-export default function Presenter( { model } ) {
+const Presenter = ( { model } ) => {
 
     const [ sort, sortBy] = useState("none");
     const [ cats, sortCats ] = useState(model);
@@ -45,3 +46,9 @@ export default function Presenter( { model } ) {
     );
 
 }
+
+Presenter.propTypes = {
+    model: PropTypes.array
+};
+
+export default Presenter;

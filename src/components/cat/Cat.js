@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import './Cat.css';
 
-export default function Cat( { cat } ) {
+const Cat = ( { cat } ) => {
     return (
     <div className="cat">
         <img className="cat-image" src={window.location.origin + '/cats/' + cat.image } alt="" />
@@ -8,3 +9,9 @@ export default function Cat( { cat } ) {
     </div>
     );
 }
+
+Cat.propTypes = {
+  cat: PropTypes.object
+};
+
+export default Cat;

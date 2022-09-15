@@ -1,7 +1,8 @@
 import Trigger from '../trigger/Trigger.js';
+import PropTypes from 'prop-types';
 import './Triggers.css';
 
-export default function Triggers( { sort, sortBy } ) {
+const Triggers = ( { sort, sortBy } ) => {
 
     const triggers = [
         { label: 'none' , arg: 'none'},
@@ -25,3 +26,10 @@ export default function Triggers( { sort, sortBy } ) {
   );
 
 }
+
+Triggers.propTypes = {
+    sort: PropTypes.string,
+    sortBy: PropTypes.func
+}
+
+export default Triggers;
