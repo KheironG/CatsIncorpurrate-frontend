@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Cat.css';
+import './Cat.scss';
 
 const Cat = ( { cat } ) => {
     return (

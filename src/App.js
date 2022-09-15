@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import Presenter from './components/presenter/Presenter.js';
-import './App.css';
+import './App.scss';
 
 const App = () => {
 
-    const [ model, setModel ] = useState([]);
+    const [ model, setModel ] = useState();
 
     useEffect(() => {
         const getModel = async () => {
@@ -27,8 +27,8 @@ const App = () => {
                     <sup>TM</sup>
                 </h1>
                 <p><em>Sorting your cats has never been easier.</em></p>
-                { model.length === 0
-                    ? ( 'loading' )
+                { model === undefined
+                    ? ( 'loading cats...' )
                     : ( <Presenter model={model.cats} /> )
                 }
           </header>

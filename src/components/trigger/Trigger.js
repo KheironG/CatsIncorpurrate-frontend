@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Trigger.css';
+import './Trigger.scss';
 
 const Trigger = ( { label, triggerClass, setSortState } ) => {
   return (

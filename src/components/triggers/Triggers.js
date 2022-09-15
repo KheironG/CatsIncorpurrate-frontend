@@ -1,6 +1,6 @@
 import Trigger from '../trigger/Trigger.js';
 import PropTypes from 'prop-types';
-import './Triggers.css';
+import './Triggers.scss';
 
 const Triggers = ( { sortState, setSortState } ) => {
 

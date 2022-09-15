@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Triggers from '../triggers/Triggers.js';
 import Cat from '../cat/Cat.js';
 
-import './Presenter.css';
+import './Presenter.scss';
 
 const Presenter = ( { model } ) => {
 
@@ -15,22 +15,16 @@ const Presenter = ( { model } ) => {
         switch ( sortState ) {
             case 'none':
                 return copy;
-                break;
             case 'lives left':
                 return copy.sort((a,b) => a.livesLeft - b.livesLeft);
-                break;
             case 'cute':
                 return copy.sort((a,b) => b.cutenessLevel - a.cutenessLevel );
-                break;
             case 'not cute':
                 return copy.sort((a,b) => a.cutenessLevel - b.cutenessLevel );
-                break;
             case 'atchooo':
                 return copy.filter( ( {allergyInducingFur} ) => allergyInducingFur !== false );
-                break;
             default:
                 return copy;
-                break;
         }
     };
 
@@ -40,7 +34,7 @@ const Presenter = ( { model } ) => {
       <div className="view">
             <Triggers sortState={sortState} setSortState={setSortState} />
             <div className="cats">
-                {sortingOrder.map(function(cat){
+                {sortingOrder.map( (cat) => {
                     return(
                         <Cat key={cat.name} cat={cat} />
                     )
