@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-import Triggers from '../triggers/Triggers.tsx';
-import Cat from '../cat/Cat.tsx';
+import Triggers from '../triggers/Triggers';
+import Cat from '../cat/Cat';
 
 import './Presenter.scss';
 

@@ -1,4 +1,4 @@
-import Trigger from '../trigger/Trigger.tsx';
+import Trigger from '../trigger/Trigger';
 import PropTypes from 'prop-types';
 import './Triggers.scss';
 

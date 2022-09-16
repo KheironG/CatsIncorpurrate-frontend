@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Presenter from './components/presenter/Presenter.tsx';
+import Presenter from './components/presenter/Presenter';
 import './App.scss';
 
 const App = () => {
