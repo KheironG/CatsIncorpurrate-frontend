@@ -1,7 +1,20 @@
 import PropTypes from 'prop-types';
 import './Cat.scss';
 
-const Cat = ( { cat } ) => {
+
+interface CatObject {
+    name: string;
+    image: string;
+    cutenessLevel: number;
+    allergyInducingFur: boolean;
+    livesLeft: number;
+}
+
+interface CatProps {
+    cat: CatObject;
+}
+
+const Cat = ( { cat }: CatProps ) => {
     return (
     <div className="cat">
         <img className="cat-image" src={window.location.origin + '/cats/' + cat.image } alt="" />

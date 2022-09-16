@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <App />
-);
+const rootElement = document.getElementById('root');
+if ( !rootElement ) {
+    throw new Error('Failed to find the root element');
+} else {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
+        <App />
+    );
+}

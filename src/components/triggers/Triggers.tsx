@@ -2,7 +2,12 @@ import Trigger from '../trigger/Trigger';
 import PropTypes from 'prop-types';
 import './Triggers.scss';
 
-const Triggers = ( { sortState, setSortState } ) => {
+interface Props {
+    sortState: string;
+    setSortState: ( active: string ) => void;
+}
+
+const Triggers = ( { sortState, setSortState }: Props ) => {
 
     const triggers = [
         { label: 'none' },
@@ -19,7 +24,7 @@ const Triggers = ( { sortState, setSortState } ) => {
                 {triggers.map( (trigger) => {
                     const triggerClass = trigger.label === sortState ? ('trigger-active') : ('trigger');
                     return(
-                        <Trigger key={trigger.label} label={trigger.label} triggerClass={triggerClass} setSortState={setSortState} />
+                        <Trigger key={trigger.label} label={trigger.label}  triggerClass={triggerClass} setSortState={setSortState} />
                     )
                 })}
             </div>

@@ -6,11 +6,16 @@ import Cat from '../cat/Cat';
 
 import './Presenter.scss';
 
-const Presenter = ( { model } ) => {
+
+interface Prop {
+    model: Array<any>;
+}
+
+const Presenter = ( { model }: Prop ) => {
 
     const [ sortState, setSortState ] = useState("none");
 
-    const calculateSortingOrder = ( sortState, model ) => {
+    const calculateSortingOrder = ( sortState:string, model:Array<any> ): Array<any> => {
         const copy = model.slice();
         switch ( sortState ) {
             case 'none':

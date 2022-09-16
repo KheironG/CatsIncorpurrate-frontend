@@ -4,14 +4,14 @@ import './App.scss';
 
 const App = () => {
 
-    const [ model, setModel ] = useState();
+    const [ model, setModel ] = useState<Array<any> | undefined>(undefined);
 
     useEffect(() => {
         const getModel = async () => {
           try {
             const response = await fetch( "http://localhost:4000/cats", { mode:'cors' } );
             const responseData = await response.json();
-            setModel(responseData);
+            setModel(responseData.cats);
           } catch (error) {
             console.error(error);
           }
@@ -29,7 +29,7 @@ const App = () => {
                 <p><em>Sorting your cats has never been easier.</em></p>
                 { model === undefined
                     ? ( 'loading cats...' )
-                    : ( <Presenter model={model.cats} /> )
+                    : ( <Presenter model={model} /> )
                 }
           </header>
     </div>

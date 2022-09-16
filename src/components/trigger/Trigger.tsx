@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import './Trigger.scss';
 
-const Trigger = ( { label, triggerClass, setSortState } ) => {
+
+interface Props {
+    label: string;
+    triggerClass: string;
+    setSortState: ( active: string ) => void;
+}
+
+const Trigger = ( { label, triggerClass, setSortState }: Props ) => {
   return (
     <div className={triggerClass} onClick={() => setSortState(label)} >
         {label}
