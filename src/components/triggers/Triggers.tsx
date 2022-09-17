@@ -9,22 +9,16 @@ interface Props {
 
 const Triggers = ( { sortState, setSortState }: Props ) => {
 
-    const triggers = [
-        { label: 'none' },
-        { label: 'cute' },
-        { label: 'not cute' },
-        { label: 'lives left' },
-        { label: 'atchooo' },
-    ];
+    const triggers: string[] = [ 'none', 'cute', 'not cute', 'lives left', 'atchooo' ];
 
   return (
         <div className="trigger-container">
             <b className="sorting">sorting:</b>
             <div className="triggers">
                 {triggers.map( (trigger) => {
-                    const triggerClass = trigger.label === sortState ? ('trigger-active') : ('trigger');
+                    const triggerClass = trigger === sortState ? ('trigger-active') : ('trigger');
                     return(
-                        <Trigger key={trigger.label} label={trigger.label}  triggerClass={triggerClass} setSortState={setSortState} />
+                        <Trigger key={trigger} label={trigger}  triggerClass={triggerClass} setSortState={setSortState} />
                     )
                 })}
             </div>
