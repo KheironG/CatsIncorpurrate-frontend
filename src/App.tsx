@@ -21,17 +21,19 @@ const App = () => {
 
   return (
     <div className="App">
-          <header className="App-header">
+          <header>
                 <h1>
                     Cats Incorpurrate
                     <sup>TM</sup>
                 </h1>
                 <p><em>Sorting your cats has never been easier.</em></p>
-                { model === undefined
-                    ? ( 'loading cats...' )
-                    : ( <Presenter model={model} /> )
-                }
           </header>
+          <main>
+              { model === undefined
+                  ? ( 'loading cats...' )
+                  : ( <Presenter model={model} /> )
+              }
+          </main>
     </div>
   );
 }

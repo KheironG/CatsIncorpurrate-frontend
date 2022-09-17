@@ -1,6 +1,6 @@
 .trigger-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin-top: 60px;
@@ -9,18 +9,19 @@
 
     .sorting {
         color: black;
-        width: 10%;
         margin-right: 30px;
     }
 
     .triggers {
         display: flex;
-        justify-content: flex-start;
         align-items: center;
-        width: 90%;
         overflow-y: scroll;
         -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 
+    .triggers::-webkit-scrollbar {
+        display: none;
     }
 
 }
