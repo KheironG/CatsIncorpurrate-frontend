@@ -4,7 +4,7 @@ import './Triggers.scss';
 
 interface Props {
     sortState: string;
-    setSortState: ( active: string ) => void;
+    setSortState: ( value : string ) => void;
 }
 
 const Triggers = ( { sortState, setSortState }: Props ) => {
